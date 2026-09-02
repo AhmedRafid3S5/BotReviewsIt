@@ -1,0 +1,9 @@
+requests
+beautifulsoup4
+python-dotenv
+langchain
+langchain-ollama
+fastapi
+uvicorn
+streamlit
+numpy
