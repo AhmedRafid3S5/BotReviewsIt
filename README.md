@@ -137,18 +137,13 @@ a standard local setup a `.env` containing just the API key is enough.
 
 ## 6. Build the database
 
-`phones.db` is gitignored too, so a fresh clone has no data. Populate it in two steps.
+Populate via two steps.
 
-**a. Scrape GSMArena** — takes roughly two minutes, since there is a deliberate 5-second
-delay between requests (GSMArena rate-limits aggressively):
+**a. Scrape GSMArena** — takes about 2 mins:
 
 ```bash
 python scraper.py
 ```
-
-This crawls the Samsung listing pages to discover each phone's URL, parses the spec
-tables, and writes 12 phones with roughly 680 spec rows into `phones.db`. Re-running
-replaces a phone's existing rows rather than duplicating them.
 
 To scrape only a subset, pass name fragments as arguments:
 
@@ -162,11 +157,7 @@ python scraper.py S23 S24
 python rag.py
 ```
 
-This creates one chunk per phone per spec category (plus a short overview chunk), embeds
-each with `nomic-embed-text`, and stores the vectors as blobs in the `embeddings` table —
-about 180 chunks for the full 12-phone set. It prints one line per phone as it goes.
-
-Both steps are one-time. Re-run `rag.py` whenever you re-scrape, since indexing clears and
+Both steps are one-time. Re-run `rag.py` whenever re-scrape is done, since indexing clears and
 rebuilds the whole table.
 
 ## 7. Run the app
