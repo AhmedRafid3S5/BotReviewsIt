@@ -47,7 +47,7 @@ you need both the API key *and* a local Ollama daemon.
 ## 1. Clone
 
 ```bash
-git clone <your-repo-url> ReviewBot
+git clone https://github.com/AhmedRafid3S5/BotReviewsIt.git
 ```
 
 ```bash
