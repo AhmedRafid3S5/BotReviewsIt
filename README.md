@@ -28,8 +28,6 @@ GSMArena ──► scraper.py ──► SQLite (phones.db) ──► rag.py (emb
 | [`app.py`](app.py) | Streamlit chat interface, a pure HTTP client of the API |
 | [`config.py`](config.py) | Reads `.env`; model names, hosts, API key, DB path |
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for the full design rationale.
-
 ---
 
 ## Prerequisites
@@ -239,9 +237,6 @@ which specialist the orchestrator routed the query to.
 
 Galaxy S21 5G · S21 Ultra 5G · S22 5G · S22 Ultra 5G · S23 · S23 Ultra · S24 · S24 Ultra ·
 Z Flip5 · Z Fold5 · A54 · A34
-
-Edit the `PHONES` list in [`scraper.py`](scraper.py) to change the set, then re-run
-`python scraper.py` followed by `python rag.py`.
 
 ---
 
